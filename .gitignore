@@ -1,0 +1,6 @@
+src/*.o
+src/merc
+
+log/
+player/
+src/*.txt
