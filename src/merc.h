@@ -3665,6 +3665,7 @@ char *	crypt		args( ( const char *key, const char *salt ) );
 
 #if defined(unix)
 #define PLAYER_DIR	"../player/"	/* Player files			*/
+#define AREA_DIR    "../area/"
 #define NULL_FILE	"/dev/null"	/* To reserve one stream	*/
 #endif
 

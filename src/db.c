@@ -182,6 +182,8 @@ int			sAllocPerm;
 bool			fBootDb;
 FILE *			fpArea;
 char			strArea[MAX_INPUT_LENGTH];
+char            strAreaLoc[MAX_INPUT_LENGTH];
+char            strAreaList[MAX_INPUT_LENGTH];
 
 
 
@@ -286,7 +288,9 @@ void boot_db(void) {
      */
     {
         FILE *fpList;
-        if((fpList = fopen(AREA_LIST, "r")) == NULL) {
+        strcpy(strAreaList, AREA_DIR);
+        strcat(strAreaList, AREA_LIST);
+        if((fpList = fopen(strAreaList, "r")) == NULL) {
             perror(AREA_LIST);
             exit(1);
         }
@@ -298,7 +302,10 @@ void boot_db(void) {
             if(strArea[0] == '-') {
                 fpArea = stdin;
             } else {
-                if((fpArea = fopen(strArea, "r")) == NULL) {
+                strcpy(strAreaLoc, AREA_DIR);
+                strcat(strAreaLoc, strArea);
+                if((fpArea = fopen(strAreaLoc, "r")) == NULL) {
+                    printf("Issue loading: %s\n", strArea);
                     perror(strArea);
                     exit(1);
                 }
