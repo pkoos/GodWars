@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PORT=3000
+PORT=4000
 LOGFILE=../log/merc.log
 
 cd ../area

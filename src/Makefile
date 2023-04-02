@@ -1,5 +1,5 @@
-CC      = gcc-9
-PROF    =
+CC      = gcc
+PROF    = -fcommon
 NOCRYPT =
 #C_FLAGS = -O -Wall $(PROF) $(NOCRYPT)
 C_FLAGS = -Wall -Wno-unused -Wno-trigraphs $(PROF) $(NOCRYPT) -DMERC

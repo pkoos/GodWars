@@ -1,5 +1,6 @@
 src/*.o
 src/merc
+*.out
 
 log/
 player/
